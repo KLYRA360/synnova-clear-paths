@@ -1,0 +1,48 @@
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import heroImage from "@/assets/hero-synnova.jpg";
+
+export function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-muted/50 to-background">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="text-balance mb-6">
+              Synnova, votre solution de gestion du Tiers Payant
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              Déléguez vos démarches administratives pour vous concentrer sur vos clients et vos patients.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg">
+                <Link to="/contact">
+                  Demander un devis
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a
+                  href="https://wa.me/33000000000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="mr-2 h-4 w-4" />
+                  Parler sur WhatsApp
+                </a>
+              </Button>
+            </div>
+          </div>
+          <div className="relative">
+            <img
+              src={heroImage}
+              alt="Professionnels de santé travaillant avec Synnova"
+              className="rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
