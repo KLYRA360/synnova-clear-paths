@@ -3,16 +3,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Helmet } from "react-helmet-async";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
-
 export default function Contact() {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Contacter Synnova – Devis & informations</title>
-        <meta
-          name="description"
-          content="Parlez-nous de votre situation Tiers Payant. Réponse sous 24h ouvrées."
-        />
+        <meta name="description" content="Parlez-nous de votre situation Tiers Payant. Réponse sous 24h ouvrées." />
       </Helmet>
 
       <main>
@@ -43,12 +38,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Téléphone</h3>
-                      <a
-                        href="tel:+33000000000"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        +33 (0) 0 00 00 00 00
-                      </a>
+                      <a href="tel:+33000000000" className="text-muted-foreground hover:text-primary transition-colors">+33 (0) 6 84 50 66 20</a>
                     </div>
                   </div>
 
@@ -58,12 +48,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">WhatsApp</h3>
-                      <a
-                        href="https://wa.me/33000000000"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
+                      <a href="https://wa.me/33000000000" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                         Discuter sur WhatsApp
                       </a>
                     </div>
@@ -75,12 +60,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <a
-                        href="mailto:contact@synnova.fr"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        contact@synnova.fr
-                      </a>
+                      <a href="mailto:contact@synnova.fr" className="text-muted-foreground hover:text-primary transition-colors">l.lanzetto@synnova.fr</a>
                     </div>
                   </div>
 
@@ -133,59 +113,35 @@ export default function Contact() {
                       <label htmlFor="name" className="block text-sm font-medium mb-2">
                         Nom complet *
                       </label>
-                      <Input
-                        id="name"
-                        type="text"
-                        placeholder="Votre nom"
-                        required
-                      />
+                      <Input id="name" type="text" placeholder="Votre nom" required />
                     </div>
 
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium mb-2">
                         Email *
                       </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="votre@email.fr"
-                        required
-                      />
+                      <Input id="email" type="email" placeholder="votre@email.fr" required />
                     </div>
 
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium mb-2">
                         Téléphone
                       </label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        placeholder="+33 0 00 00 00 00"
-                      />
+                      <Input id="phone" type="tel" placeholder="+33 0 00 00 00 00" />
                     </div>
 
                     <div>
                       <label htmlFor="profession" className="block text-sm font-medium mb-2">
                         Profession *
                       </label>
-                      <Input
-                        id="profession"
-                        type="text"
-                        placeholder="Ex: Opticien, Audioprothésiste..."
-                        required
-                      />
+                      <Input id="profession" type="text" placeholder="Ex: Opticien, Audioprothésiste..." required />
                     </div>
 
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium mb-2">
                         Votre message *
                       </label>
-                      <Textarea
-                        id="message"
-                        rows={6}
-                        placeholder="Décrivez votre situation et vos besoins..."
-                        required
-                      />
+                      <Textarea id="message" rows={6} placeholder="Décrivez votre situation et vos besoins..." required />
                     </div>
 
                     <Button type="submit" size="lg" className="w-full">
@@ -202,6 +158,5 @@ export default function Contact() {
           </div>
         </section>
       </main>
-    </>
-  );
+    </>;
 }
