@@ -13,7 +13,7 @@ export function Footer() {
               <img 
                 src={logoSynnova} 
                 alt="Logo Synnova" 
-                className="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
+                className="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
               />
               <span className="text-2xl font-bold text-primary">Synnova</span>
             </Link>
