@@ -30,7 +30,7 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-muted/30 via-background to-muted/40">
+    <section className="py-20 bg-gradient-to-br from-secondary/5 via-accent/5 to-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-balance mb-4 text-primary">
@@ -45,10 +45,10 @@ export function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-background/80 backdrop-blur-sm border border-secondary/20 rounded-lg p-6 hover:shadow-md hover:border-secondary/40 transition-all duration-300"
+              className="bg-background border border-accent/30 rounded-lg p-6 hover:shadow-lg hover:border-accent transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center mb-4 border border-secondary/30">
-                <benefit.icon className="h-5 w-5 text-secondary" />
+              <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center mb-4 border border-accent/40">
+                <benefit.icon className="h-5 w-5 text-accent" />
               </div>
               <h3 className="text-lg font-semibold mb-2 text-primary">{benefit.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">

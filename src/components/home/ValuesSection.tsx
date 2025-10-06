@@ -45,10 +45,10 @@ export function ValuesSection() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="bg-card border border-accent/20 rounded-lg p-8 hover:shadow-lg hover:border-accent/40 transition-all duration-300"
+              className="bg-card border border-secondary/20 rounded-lg p-8 hover:shadow-lg hover:border-secondary/40 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 border border-accent/30">
-                <value.icon className="h-6 w-6 text-accent" />
+              <div className="w-12 h-12 rounded-lg bg-secondary/15 flex items-center justify-center mb-4 border border-secondary/40">
+                <value.icon className="h-6 w-6 text-secondary" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-primary">{value.title}</h3>
               <p className="text-muted-foreground leading-relaxed">

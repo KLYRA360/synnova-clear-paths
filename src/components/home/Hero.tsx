@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-synnova.jpg";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background">
+    <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -35,7 +35,7 @@ export function Hero() {
             </div>
           </div>
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-secondary/10 rounded-2xl -z-10 blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-accent/10 rounded-2xl -z-10 blur-3xl"></div>
             <img
               src={heroImage}
               alt="Professionnels de santé travaillant avec Synnova"

@@ -9,98 +9,99 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 98%;
-    --foreground: 0 0% 17%;
+    --foreground: 205 20% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 17%;
+    --card-foreground: 205 20% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 17%;
+    --popover-foreground: 205 20% 25%;
 
-    --primary: 198 73% 15%;
+    --primary: 205 21% 38%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 190 38% 38%;
+    --secondary: 191 32% 58%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 210 8% 46%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 205 15% 45%;
 
-    --accent: 38 51% 56%;
-    --accent-foreground: 198 73% 15%;
+    --accent: 38 58% 58%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 95%;
-    --ring: 38 51% 56%;
+    --border: 205 15% 88%;
+    --input: 0 0% 96%;
+    --ring: 38 58% 58%;
 
     --radius: 0.5rem;
     
-    /* Custom tokens for Synnova */
-    --hero-gradient: linear-gradient(135deg, hsla(198, 73%, 15%, 0.05), hsla(190, 38%, 38%, 0.08));
-    --accent-soft: 38 51% 56%;
+    /* Custom tokens for Synnova - matching brochure */
+    --hero-gradient: linear-gradient(135deg, hsla(205, 21%, 38%, 0.08), hsla(191, 32%, 58%, 0.12));
+    --accent-soft: 38 58% 58%;
     --neutral-50: 0 0% 98%;
-    --neutral-100: 0 0% 95%;
-    --neutral-200: 0 0% 90%;
-    --text-primary: 0 0% 17%;
-    --text-secondary: 210 8% 46%;
-    --section-alt: 0 0% 95%;
+    --neutral-100: 0 0% 96%;
+    --neutral-200: 205 15% 88%;
+    --text-primary: 205 20% 25%;
+    --text-secondary: 205 15% 45%;
+    --section-alt: 205 12% 94%;
+    --primary-dark: 205 25% 32%;
 
     --sidebar-background: 0 0% 98%;
 
-    --sidebar-foreground: 0 0% 17%;
+    --sidebar-foreground: 205 20% 25%;
 
-    --sidebar-primary: 198 73% 15%;
+    --sidebar-primary: 205 21% 38%;
 
     --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent: 0 0% 96%;
 
-    --sidebar-accent-foreground: 0 0% 17%;
+    --sidebar-accent-foreground: 205 20% 25%;
 
-    --sidebar-border: 0 0% 90%;
+    --sidebar-border: 205 15% 88%;
 
-    --sidebar-ring: 38 51% 56%;
+    --sidebar-ring: 38 58% 58%;
   }
 
   .dark {
-    --background: 198 73% 8%;
+    --background: 205 25% 18%;
     --foreground: 0 0% 98%;
 
-    --card: 198 73% 12%;
+    --card: 205 25% 22%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 198 73% 12%;
+    --popover: 205 25% 22%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 190 38% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 191 32% 58%;
+    --primary-foreground: 205 25% 18%;
 
-    --secondary: 190 38% 38%;
+    --secondary: 191 32% 48%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 198 20% 20%;
-    --muted-foreground: 210 8% 65%;
+    --muted: 205 20% 25%;
+    --muted-foreground: 205 10% 65%;
 
-    --accent: 38 51% 56%;
-    --accent-foreground: 0 0% 17%;
+    --accent: 38 58% 58%;
+    --accent-foreground: 205 25% 18%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 198 20% 25%;
-    --input: 198 20% 25%;
-    --ring: 190 38% 45%;
-    --sidebar-background: 198 73% 10%;
+    --border: 205 20% 30%;
+    --input: 205 20% 25%;
+    --ring: 38 58% 58%;
+    --sidebar-background: 205 25% 20%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 190 38% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 198 20% 18%;
+    --sidebar-primary: 191 32% 58%;
+    --sidebar-primary-foreground: 205 25% 18%;
+    --sidebar-accent: 205 20% 28%;
     --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 198 20% 25%;
-    --sidebar-ring: 190 38% 45%;
+    --sidebar-border: 205 20% 30%;
+    --sidebar-ring: 38 58% 58%;
   }
 }
 
