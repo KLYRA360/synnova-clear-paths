@@ -83,7 +83,7 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-1">Disponibilité</h3>
                       <p className="text-muted-foreground">
-                        Lundi - Vendredi : 9h - 18h<br />
+                        Lundi, Mardi, Jeudi, Vendredi : 9h - 17h<br />
                         Réponse sous 24h ouvrées
                       </p>
                     </div>
