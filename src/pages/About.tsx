@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Heart, Shield, Users } from "lucide-react";
+import lucieProfile from "@/assets/lucie-profile.png";
 
 export default function About() {
   return (
@@ -27,26 +28,43 @@ export default function About() {
 
         {/* Bio Section */}
         <section className="py-16 bg-background">
-          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-lg mx-auto">
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                Je m'appelle <strong className="text-foreground">Lucie Lanzetto</strong>, et j'ai passé 18 ans dans le monde de l'optique. 
-                J'ai été opticienne, puis gérante de plusieurs magasins, et j'ai vécu au quotidien la complexité et la charge 
-                que représente la gestion du Tiers Payant.
-              </p>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Photo de Lucie */}
+              <div className="order-2 lg:order-1">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/20 rounded-2xl -z-10 blur-2xl"></div>
+                  <img
+                    src={lucieProfile}
+                    alt="Lucie Lanzetto, fondatrice de Synnova"
+                    className="rounded-2xl shadow-xl w-full h-auto"
+                  />
+                </div>
+              </div>
 
-              <p className="text-lg leading-relaxed text-muted-foreground mt-6">
-                C'est de cette expérience terrain qu'est née <strong className="text-foreground">Synnova</strong> : 
-                un service pensé pour alléger cette charge administrative qui pèse sur les opticiens et audioprothésistes. 
-                Je connais vos contraintes, vos impératifs de trésorerie, et le temps précieux que vous perdez 
-                à gérer des démarches administratives complexes.
-              </p>
+              {/* Texte bio */}
+              <div className="order-1 lg:order-2">
+                <div className="prose prose-lg">
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    Je m'appelle <strong className="text-foreground">Lucie Lanzetto</strong>, et j'ai passé 18 ans dans le monde de l'optique. 
+                    J'ai été opticienne, puis gérante de plusieurs magasins, et j'ai vécu au quotidien la complexité et la charge 
+                    que représente la gestion du Tiers Payant.
+                  </p>
 
-              <p className="text-lg leading-relaxed text-muted-foreground mt-6">
-                Mon objectif est simple : <strong className="text-foreground">vous permettre de vous concentrer 
-                sur votre cœur de métier</strong> – vos clients et vos patients – pendant que je m'occupe 
-                de vos démarches Tiers Payant avec rigueur et transparence.
-              </p>
+                  <p className="text-lg leading-relaxed text-muted-foreground mt-6">
+                    C'est de cette expérience terrain qu'est née <strong className="text-foreground">Synnova</strong> : 
+                    un service pensé pour alléger cette charge administrative qui pèse sur les opticiens et audioprothésistes. 
+                    Je connais vos contraintes, vos impératifs de trésorerie, et le temps précieux que vous perdez 
+                    à gérer des démarches administratives complexes.
+                  </p>
+
+                  <p className="text-lg leading-relaxed text-muted-foreground mt-6">
+                    Mon objectif est simple : <strong className="text-foreground">vous permettre de vous concentrer 
+                    sur votre cœur de métier</strong> – vos clients et vos patients – pendant que je m'occupe 
+                    de vos démarches Tiers Payant avec rigueur et transparence.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
