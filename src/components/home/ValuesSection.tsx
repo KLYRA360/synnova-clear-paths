@@ -33,7 +33,7 @@ export function ValuesSection() {
     <section className="py-20 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-balance mb-4">
+          <h2 className="text-balance mb-4 text-primary">
             Nos valeurs au service de votre quotidien
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -45,12 +45,12 @@ export function ValuesSection() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="bg-card border rounded-xl p-8 hover:shadow-lg transition-shadow"
+              className="bg-card border border-accent/20 rounded-lg p-8 hover:shadow-lg hover:border-accent/40 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                <value.icon className="h-6 w-6 text-primary" />
+              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 border border-accent/30">
+                <value.icon className="h-6 w-6 text-accent" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 text-primary">{value.title}</h3>
               <p className="text-muted-foreground leading-relaxed">
                 {value.description}
               </p>

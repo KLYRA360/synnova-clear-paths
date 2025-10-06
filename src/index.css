@@ -23,29 +23,30 @@ All colors MUST be HSL.
     --secondary: 190 38% 38%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 96%;
+    --muted: 0 0% 95%;
     --muted-foreground: 210 8% 46%;
 
     --accent: 38 51% 56%;
-    --accent-foreground: 0 0% 17%;
+    --accent-foreground: 198 73% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 91%;
-    --input: 0 0% 91%;
-    --ring: 198 73% 15%;
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 38 51% 56%;
 
     --radius: 0.5rem;
     
     /* Custom tokens for Synnova */
-    --hero-gradient: linear-gradient(135deg, hsl(198 73% 15%), hsl(190 38% 38%));
+    --hero-gradient: linear-gradient(135deg, hsla(198, 73%, 15%, 0.05), hsla(190, 38%, 38%, 0.08));
     --accent-soft: 38 51% 56%;
     --neutral-50: 0 0% 98%;
-    --neutral-100: 0 0% 96%;
-    --neutral-200: 0 0% 91%;
+    --neutral-100: 0 0% 95%;
+    --neutral-200: 0 0% 90%;
     --text-primary: 0 0% 17%;
     --text-secondary: 210 8% 46%;
+    --section-alt: 0 0% 95%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -59,9 +60,9 @@ All colors MUST be HSL.
 
     --sidebar-accent-foreground: 0 0% 17%;
 
-    --sidebar-border: 0 0% 91%;
+    --sidebar-border: 0 0% 90%;
 
-    --sidebar-ring: 198 73% 15%;
+    --sidebar-ring: 38 51% 56%;
   }
 
   .dark {

@@ -30,10 +30,10 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section className="py-20 bg-muted/50">
+    <section className="py-20 bg-gradient-to-br from-muted/30 via-background to-muted/40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-balance mb-4">
+          <h2 className="text-balance mb-4 text-primary">
             Les bénéfices concrets pour votre activité
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -45,12 +45,12 @@ export function BenefitsSection() {
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-background border rounded-xl p-6 hover:shadow-md transition-shadow"
+              className="bg-background/80 backdrop-blur-sm border border-secondary/20 rounded-lg p-6 hover:shadow-md hover:border-secondary/40 transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center mb-4">
-                <benefit.icon className="h-5 w-5 text-secondary-foreground" />
+              <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center mb-4 border border-secondary/30">
+                <benefit.icon className="h-5 w-5 text-secondary" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
+              <h3 className="text-lg font-semibold mb-2 text-primary">{benefit.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {benefit.description}
               </p>
