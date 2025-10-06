@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin } from "lucide-react";
+import logoSynnova from "@/assets/logo-synnova.png";
 
 export function Footer() {
   return (
@@ -8,8 +9,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-1">
-            <Link to="/" className="text-2xl font-bold text-primary">
-              Synnova
+            <Link to="/" className="flex items-center space-x-3 group w-fit">
+              <img 
+                src={logoSynnova} 
+                alt="Logo Synnova" 
+                className="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
+              />
+              <span className="text-2xl font-bold text-primary">Synnova</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Votre solution de gestion du Tiers Payant pour opticiens et audioprothésistes.

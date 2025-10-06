@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logoSynnova from "@/assets/logo-synnova.png";
 
 const navigation = [
   { name: "Accueil", href: "/" },
@@ -36,8 +37,13 @@ export function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-primary">Synnova</span>
+            <Link to="/" className="flex items-center space-x-3 group">
+              <img 
+                src={logoSynnova} 
+                alt="Logo Synnova" 
+                className="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
+              />
+              <span className="text-2xl font-bold text-primary transition-colors">Synnova</span>
             </Link>
           </div>
 
