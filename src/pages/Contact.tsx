@@ -3,7 +3,66 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Helmet } from "react-helmet-async";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "Le nom doit contenir au moins 2 caractères").max(100),
+  email: z.string().email("Email invalide").max(255),
+  phone: z.string().optional(),
+  profession: z.string().min(2, "La profession doit contenir au moins 2 caractères").max(100),
+  message: z.string().min(10, "Le message doit contenir au moins 10 caractères").max(1000),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
+
 export default function Contact() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      profession: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase.functions.invoke("send-contact", {
+        body: data,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message envoyé !",
+        description: "Nous vous répondrons sous 24h ouvrées.",
+      });
+
+      form.reset();
+    } catch (error: any) {
+      console.error("Error sending contact:", error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return <>
       <Helmet>
         <title>Contacter Synnova – Devis & informations</title>
@@ -108,50 +167,87 @@ export default function Contact() {
                     Demander un devis
                   </h2>
 
-                  <form className="space-y-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
-                        Nom complet *
-                      </label>
-                      <Input id="name" type="text" placeholder="Votre nom" required />
-                    </div>
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                      <FormField
+                        control={form.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Nom complet *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Votre nom" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
 
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
-                        Email *
-                      </label>
-                      <Input id="email" type="email" placeholder="votre@email.fr" required />
-                    </div>
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Email *</FormLabel>
+                            <FormControl>
+                              <Input type="email" placeholder="votre@email.fr" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
 
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                        Téléphone
-                      </label>
-                      <Input id="phone" type="tel" placeholder="+33 0 00 00 00 00" />
-                    </div>
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Téléphone</FormLabel>
+                            <FormControl>
+                              <Input type="tel" placeholder="+33 0 00 00 00 00" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
 
-                    <div>
-                      <label htmlFor="profession" className="block text-sm font-medium mb-2">
-                        Profession *
-                      </label>
-                      <Input id="profession" type="text" placeholder="Ex: Opticien, Audioprothésiste..." required />
-                    </div>
+                      <FormField
+                        control={form.control}
+                        name="profession"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Profession *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Ex: Opticien, Audioprothésiste..." {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
 
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2">
-                        Votre message *
-                      </label>
-                      <Textarea id="message" rows={6} placeholder="Décrivez votre situation et vos besoins..." required />
-                    </div>
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Votre message *</FormLabel>
+                            <FormControl>
+                              <Textarea rows={6} placeholder="Décrivez votre situation et vos besoins..." {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
 
-                    <Button type="submit" size="lg" className="w-full">
-                      Envoyer ma demande
-                    </Button>
+                      <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                        {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande"}
+                      </Button>
 
-                    <p className="text-xs text-muted-foreground text-center">
-                      * Champs obligatoires. Vos données sont traitées de manière confidentielle.
-                    </p>
-                  </form>
+                      <p className="text-xs text-muted-foreground text-center">
+                        * Champs obligatoires. Vos données sont traitées de manière confidentielle.
+                      </p>
+                    </form>
+                  </Form>
                 </div>
               </div>
             </div>
