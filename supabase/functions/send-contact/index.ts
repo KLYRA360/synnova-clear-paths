@@ -57,7 +57,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Synnova Contact <onboarding@resend.dev>",
-        to: ["l.lanzetto@synnova.fr"],
+        to: ["c.lanzetto@klyra360.fr"],
         reply_to: email,
         subject: `Nouveau message de ${name} - ${profession}`,
         html: `
