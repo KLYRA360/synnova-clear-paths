@@ -4,7 +4,7 @@ import { ArrowRight, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-synnova.jpg";
 export function Hero() {
   return <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-[40px] my-[20px]">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-[20px] my-[20px]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-balance mb-6">
