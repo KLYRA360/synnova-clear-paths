@@ -4,7 +4,6 @@ import { Mail } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -27,15 +26,21 @@ export function NewsletterSection() {
     setIsLoading(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke("subscribe", {
-        body: { email, consent: true },
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const response = await fetch(`${supabaseUrl}/functions/v1/subscribe`, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, consent: true })
       });
 
-      if (error) {
-        throw error;
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Erreur inscription');
       }
 
-      // Check if the response contains an error from the function
       if (data?.error) {
         toast({
           title: "Erreur",
@@ -51,7 +56,7 @@ export function NewsletterSection() {
       console.error("Newsletter subscription error:", error);
       toast({
         title: "Erreur",
-        description: "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
+        description: error.message || "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
         variant: "destructive",
       });
     } finally {
