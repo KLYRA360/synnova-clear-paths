@@ -41,9 +41,9 @@ export function Header() {
               <img 
                 src={logoSynnova} 
                 alt="Logo Synnova" 
-                className="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
+                className="h-14 w-14 transition-transform duration-300 group-hover:scale-110"
               />
-              <span className="text-2xl font-bold text-primary transition-colors">Synnova</span>
+              <span className="text-3xl font-bold text-primary transition-colors">Synnova</span>
             </Link>
           </div>
 
@@ -53,7 +53,7 @@ export function Header() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-base font-medium transition-colors hover:text-primary ${
+                className={`text-lg font-medium transition-colors hover:text-primary ${
                   location.pathname === item.href
                     ? "text-primary"
                     : "text-muted-foreground"
@@ -65,7 +65,7 @@ export function Header() {
           </div>
 
           <div className="hidden md:flex md:items-center md:space-x-4">
-            <Button asChild variant="default" size="default">
+            <Button asChild variant="default" size="lg">
               <Link to="/contact">Demander un devis</Link>
             </Button>
           </div>
@@ -93,7 +93,7 @@ export function Header() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`block py-2 text-base font-medium transition-colors ${
+                className={`block py-2 text-lg font-medium transition-colors ${
                   location.pathname === item.href
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"
@@ -104,7 +104,7 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-4">
-              <Button asChild variant="default" size="default" className="w-full">
+              <Button asChild variant="default" size="lg" className="w-full">
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   Demander un devis
                 </Link>
