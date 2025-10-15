@@ -44,10 +44,8 @@ const handler = async (req: Request): Promise<Response> => {
 
     const brevoApiKey = Deno.env.get("BREVO_API_KEY");
     const listId = Deno.env.get("BREVO_LIST_ID");
-    const templateId = Deno.env.get("BREVO_DOI_TEMPLATE_ID");
-    const redirectUrl = Deno.env.get("BREVO_REDIRECT_OK");
 
-    if (!brevoApiKey || !listId || !templateId || !redirectUrl) {
+    if (!brevoApiKey || !listId) {
       console.error("Missing Brevo configuration");
       return new Response(
         JSON.stringify({ error: "Server configuration error" }),
@@ -58,9 +56,9 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Call Brevo API for double opt-in confirmation
+    // Add contact directly to Brevo list
     const brevoResponse = await fetch(
-      "https://api.brevo.com/v3/contacts/doubleOptinConfirmation",
+      "https://api.brevo.com/v3/contacts",
       {
         method: "POST",
         headers: {
@@ -69,9 +67,8 @@ const handler = async (req: Request): Promise<Response> => {
         },
         body: JSON.stringify({
           email: email,
-          includeListIds: [parseInt(listId)],
-          templateId: parseInt(templateId),
-          redirectionUrl: redirectUrl,
+          listIds: [parseInt(listId)],
+          updateEnabled: true,
         }),
       }
     );
@@ -89,14 +86,13 @@ const handler = async (req: Request): Promise<Response> => {
         console.error("Could not parse Brevo error response");
       }
       
-      // Handle specific error cases with detailed messages
+      // Handle specific error cases
       if (brevoResponse.status === 400) {
-        const detailedMessage = brevoError?.message || brevoError?.code || "Cette adresse email est invalide ou déjà inscrite";
+        const detailedMessage = brevoError?.message || "Adresse email invalide";
         return new Response(
           JSON.stringify({ 
             error: detailedMessage,
-            brevoCode: brevoError?.code,
-            details: errorText 
+            brevoCode: brevoError?.code
           }),
           {
             status: 400,
@@ -105,10 +101,21 @@ const handler = async (req: Request): Promise<Response> => {
         );
       }
       
+      // 204 means contact already exists and was updated - treat as success
+      if (brevoResponse.status === 204) {
+        console.log("Contact already exists, updated:", email);
+        return new Response(
+          JSON.stringify({ ok: true }),
+          {
+            status: 200,
+            headers: { "Content-Type": "application/json", ...corsHeaders },
+          }
+        );
+      }
+      
       return new Response(
         JSON.stringify({ 
-          error: "Erreur lors de l'inscription",
-          details: errorText 
+          error: "Erreur lors de l'inscription"
         }),
         {
           status: brevoResponse.status,
