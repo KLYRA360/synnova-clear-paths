@@ -41,7 +41,7 @@ export function Header() {
               <img 
                 src={logoSynnova} 
                 alt="Logo Synnova" 
-                className="h-[67px] w-[67px] transition-transform duration-300 group-hover:scale-110"
+                className="h-20 w-20 transition-transform duration-300 group-hover:scale-110"
               />
               <span className="text-3xl font-bold text-primary transition-colors">Synnova</span>
             </Link>
