@@ -13,6 +13,7 @@ import Services from "./pages/Services";
 import WhySynnova from "./pages/WhySynnova";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
+import Merci from "./pages/Merci";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/pourquoi-synnova" element={<WhySynnova />} />
             <Route path="/actualites" element={<News />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/merci" element={<Merci />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
