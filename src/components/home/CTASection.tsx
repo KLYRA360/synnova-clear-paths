@@ -13,10 +13,10 @@ export function CTASection() {
           Découvrez comment optimiser votre gestion administrative et améliorer votre trésorerie
         </p>
         <Button asChild size="lg">
-          <Link to="/contact">
+          <a href="https://00532df8.sibforms.com/serve/MUIFADygUkcUeWbf0a2FR8QDyYaCrdnZewFGLONwncGJlKpVXmlrhQhTj_6gLOlooCNqYpyiPmNGJ9D7XRffREmIr131kW_ECP4xBH1n8b08nmcCFd2keAWof1FZh75NWXW8Pu4PhFmSwNOgpiJRberQSkEDJswpiAFQHGtSK8XBE0oxE_igWIPKK0VMX18Rqgf1p5BU7GTo0Gic" target="_blank" rel="noopener noreferrer">
             Demander un devis gratuit
             <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
+          </a>
         </Button>
       </div>
     </section>

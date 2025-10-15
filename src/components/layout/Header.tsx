@@ -66,7 +66,7 @@ export function Header() {
 
           <div className="hidden md:flex md:items-center md:space-x-4">
             <Button asChild variant="default" size="lg">
-              <Link to="/contact">Demander un devis</Link>
+              <a href="https://00532df8.sibforms.com/serve/MUIFADygUkcUeWbf0a2FR8QDyYaCrdnZewFGLONwncGJlKpVXmlrhQhTj_6gLOlooCNqYpyiPmNGJ9D7XRffREmIr131kW_ECP4xBH1n8b08nmcCFd2keAWof1FZh75NWXW8Pu4PhFmSwNOgpiJRberQSkEDJswpiAFQHGtSK8XBE0oxE_igWIPKK0VMX18Rqgf1p5BU7GTo0Gic" target="_blank" rel="noopener noreferrer">Demander un devis</a>
             </Button>
           </div>
 
@@ -105,9 +105,9 @@ export function Header() {
             ))}
             <div className="pt-4">
               <Button asChild variant="default" size="lg" className="w-full">
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="https://00532df8.sibforms.com/serve/MUIFADygUkcUeWbf0a2FR8QDyYaCrdnZewFGLONwncGJlKpVXmlrhQhTj_6gLOlooCNqYpyiPmNGJ9D7XRffREmIr131kW_ECP4xBH1n8b08nmcCFd2keAWof1FZh75NWXW8Pu4PhFmSwNOgpiJRberQSkEDJswpiAFQHGtSK8XBE0oxE_igWIPKK0VMX18Rqgf1p5BU7GTo0Gic" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                   Demander un devis
-                </Link>
+                </a>
               </Button>
             </div>
           </div>
