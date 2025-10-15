@@ -21,7 +21,7 @@ export function Hero() {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a href="https://wa.me/33000000000" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/33684506620" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Parler sur WhatsApp
                 </a>
