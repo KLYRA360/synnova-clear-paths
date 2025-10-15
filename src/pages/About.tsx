@@ -147,7 +147,7 @@ export default function About() {
                 <a href="https://00532df8.sibforms.com/serve/MUIFADygUkcUeWbf0a2FR8QDyYaCrdnZewFGLONwncGJlKpVXmlrhQhTj_6gLOlooCNqYpyiPmNGJ9D7XRffREmIr131kW_ECP4xBH1n8b08nmcCFd2keAWof1FZh75NWXW8Pu4PhFmSwNOgpiJRberQSkEDJswpiAFQHGtSK8XBE0oxE_igWIPKK0VMX18Rqgf1p5BU7GTo0Gic" target="_blank" rel="noopener noreferrer">Demander un devis</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-                <a href="https://wa.me/33000000000" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/33684506620" target="_blank" rel="noopener noreferrer">
                   Parler sur WhatsApp
                 </a>
               </Button>
