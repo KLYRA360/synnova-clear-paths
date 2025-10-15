@@ -2,11 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import heroImage from "@/assets/hero-synnova.jpg";
-
 export function Hero() {
-  return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+  return <section className="relative overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-[40px] my-[20px]">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-balance mb-6">
@@ -23,11 +21,7 @@ export function Hero() {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <a
-                  href="https://wa.me/33000000000"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://wa.me/33000000000" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Parler sur WhatsApp
                 </a>
@@ -36,14 +30,9 @@ export function Hero() {
           </div>
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-accent/10 rounded-2xl -z-10 blur-3xl"></div>
-            <img
-              src={heroImage}
-              alt="Professionnels de santé travaillant avec Synnova"
-              className="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-            />
+            <img src={heroImage} alt="Professionnels de santé travaillant avec Synnova" className="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300" />
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }

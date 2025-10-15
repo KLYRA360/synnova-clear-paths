@@ -7,38 +7,33 @@ import { FAQSection } from "@/components/home/FAQSection";
 import { CTASection } from "@/components/home/CTASection";
 import { NewsletterSection } from "@/components/shared/NewsletterSection";
 import { Helmet } from "react-helmet-async";
-
 export default function Home() {
-  return (
-    <>
+  return <>
       <Helmet>
         <title>Gestion du Tiers Payant pour opticiens & audioprothésistes | Synnova</title>
-        <meta
-          name="description"
-          content="Déléguez le Tiers Payant, accélérez votre trésorerie, gagnez du temps. Services humains, rigoureux et sans engagement. Demandez un devis."
-        />
+        <meta name="description" content="Déléguez le Tiers Payant, accélérez votre trésorerie, gagnez du temps. Services humains, rigoureux et sans engagement. Demandez un devis." />
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Synnova",
-            description: "Service de gestion du Tiers Payant pour opticiens et audioprothésistes",
-            url: "https://synnova.fr",
-            logo: "https://synnova.fr/logo.png",
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+33-0-00-00-00-00",
-              contactType: "Customer Service",
-              areaServed: "FR",
-              availableLanguage: "French",
-            },
-          })}
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Synnova",
+          description: "Service de gestion du Tiers Payant pour opticiens et audioprothésistes",
+          url: "https://synnova.fr",
+          logo: "https://synnova.fr/logo.png",
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: "+33-0-00-00-00-00",
+            contactType: "Customer Service",
+            areaServed: "FR",
+            availableLanguage: "French"
+          }
+        })}
         </script>
       </Helmet>
 
       <main>
         <Hero />
-        <ValuesSection />
+        <ValuesSection className="my-0" />
         <BenefitsSection />
         <HowItWorksSection />
         <TestimonialsSection />
@@ -46,6 +41,5 @@ export default function Home() {
         <FAQSection />
         <NewsletterSection />
       </main>
-    </>
-  );
+    </>;
 }
