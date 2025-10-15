@@ -120,7 +120,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Newsletter subscription successful for:", email);
 
     return new Response(
-      JSON.stringify({ success: true, message: "Inscription réussie" }),
+      JSON.stringify({ ok: true }),
       {
         status: 200,
         headers: { "Content-Type": "application/json", ...corsHeaders },
