@@ -58,9 +58,9 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Call Brevo API for double opt-in confirmation
+    // Call Brevo API for DOI contact creation
     const brevoResponse = await fetch(
-      "https://api.brevo.com/v3/contacts/doubleOptinConfirmation",
+      "https://api.brevo.com/v3/contacts/doi",
       {
         method: "POST",
         headers: {
