@@ -80,10 +80,24 @@ const handler = async (req: Request): Promise<Response> => {
       const errorText = await brevoResponse.text();
       console.error("Brevo API error:", brevoResponse.status, errorText);
       
-      // Handle specific error cases
+      // Try to parse error details
+      let brevoError;
+      try {
+        brevoError = JSON.parse(errorText);
+        console.error("Brevo error details:", JSON.stringify(brevoError, null, 2));
+      } catch (e) {
+        console.error("Could not parse Brevo error response");
+      }
+      
+      // Handle specific error cases with detailed messages
       if (brevoResponse.status === 400) {
+        const detailedMessage = brevoError?.message || brevoError?.code || "Cette adresse email est invalide ou déjà inscrite";
         return new Response(
-          JSON.stringify({ error: "Cette adresse email est invalide ou déjà inscrite" }),
+          JSON.stringify({ 
+            error: detailedMessage,
+            brevoCode: brevoError?.code,
+            details: errorText 
+          }),
           {
             status: 400,
             headers: { "Content-Type": "application/json", ...corsHeaders },
@@ -92,7 +106,10 @@ const handler = async (req: Request): Promise<Response> => {
       }
       
       return new Response(
-        JSON.stringify({ error: "Erreur lors de l'inscription" }),
+        JSON.stringify({ 
+          error: "Erreur lors de l'inscription",
+          details: errorText 
+        }),
         {
           status: brevoResponse.status,
           headers: { "Content-Type": "application/json", ...corsHeaders },
