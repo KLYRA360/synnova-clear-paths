@@ -70,7 +70,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/33684506620"
+                  href="https://api.whatsapp.com/send?phone=33684506620"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
