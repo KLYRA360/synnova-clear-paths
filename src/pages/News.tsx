@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const articles = [
   {
-    title: "Les nouvelles réglementations Tiers Payant en 2025",
+    title: "Les nouvelles réglementations Tiers Payant en 2026",
     excerpt: "Découvrez les changements importants qui impacteront votre gestion du Tiers Payant cette année.",
     date: "15 janvier 2025",
     readTime: "5 min",
