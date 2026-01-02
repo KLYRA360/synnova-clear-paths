@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import WhySynnova from "./pages/WhySynnova";
 import News from "./pages/News";
+import ReglementationsTiersPayant2025 from "./pages/articles/ReglementationsTiersPayant2025";
 import Contact from "./pages/Contact";
 import Merci from "./pages/Merci";
 import NotFound from "./pages/NotFound";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/pourquoi-synnova" element={<WhySynnova />} />
             <Route path="/actualites" element={<News />} />
+            <Route path="/actualites/reglementations-tiers-payant-2025" element={<ReglementationsTiersPayant2025 />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/merci" element={<Merci />} />
             <Route path="*" element={<NotFound />} />
