@@ -42,7 +42,7 @@ export default function ReglementationsTiersPayant2025() {
             </div>
             
             <h1 className="text-balance mb-6">
-              Les nouvelles réglementations Tiers Payant en 2025
+              Les nouvelles réglementations Tiers Payant en 2026
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Découvrez les changements importants qui impacteront votre gestion du Tiers Payant cette année.
